@@ -10,15 +10,24 @@ import HelloController from "./controllers/hello-controller.js"
 import UserController from "./users/users-controller.js"
 import TuitsController from "./controllers/tuits/tuits-controller.js";
 import AuthController from "./users/auth-controller.js";
-const app = express()
+const app = express();
+
+app.set("trust proxy", 1);
 
 app.use(
-    session({
-      secret: "any string",
-      resave: false,
-      saveUninitialized: true,
-    })
-   );
+
+  session({
+    secret: "any string",
+    resave: false,
+    proxy: true,
+    saveUninitialized: true,
+    cookie: {
+      sameSite: "none",
+      secure: true,
+    },
+  })
+
+);
    
 
    app.use(
