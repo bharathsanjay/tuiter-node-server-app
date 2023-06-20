@@ -1,6 +1,10 @@
 import express from 'express'
 import cors from 'cors'
 import session from "express-session";
+import mongoose  from 'mongoose';
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/tuiter'
+mongoose.connect(CONNECTION_STRING);
+
 
 import HelloController from "./controllers/hello-controller.js"
 import UserController from "./users/users-controller.js"
@@ -31,5 +35,4 @@ HelloController(app)
 UserController(app)
 AuthController(app);
 
-const port = process.env.PORT || 4000;
-app.listen(port)
+app.listen(process.env.PORT || 4000)
