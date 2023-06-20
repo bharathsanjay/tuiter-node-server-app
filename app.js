@@ -24,7 +24,8 @@ app.use(
    app.use(
     cors({
       credentials: true,
-      origin: "http://localhost:3000",
+      origin: ["http://localhost:3000", "https://a6--soft-gumption-20a115.netlify.app"],
+
     })
    );
    
