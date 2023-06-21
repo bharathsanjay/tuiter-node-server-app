@@ -13,7 +13,7 @@ const createTuit = async (req, res) => {
   newTuit.image = "nasa.png"
   newTuit.handle = "nasa"
   newTuit.time = "2h"
-  newTuit.username = "nasa"
+  newTuit.username = "Nasa"
 
   const insertedTuit = await tuitsDao.createTuit(newTuit);
   res.json(insertedTuit);
