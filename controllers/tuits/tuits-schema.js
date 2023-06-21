@@ -8,7 +8,8 @@ const schema = mongoose.Schema({
   comments : Number,
   retweets : Number,
   image : String,
-  handle : String
+  handle : String,
+  username : String
 
 }, {collection: 'tuits'});
 export default schema;
