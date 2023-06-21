@@ -9,7 +9,8 @@ const schema = mongoose.Schema({
   retweets : Number,
   image : String,
   handle : String,
-  username : String
+  username : String,
+  time : String
 
 }, {collection: 'tuits'});
 export default schema;
